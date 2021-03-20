@@ -23,6 +23,12 @@ var st = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y
     ext: 'png'
 });
 
+
+var openTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	maxZoom: 17,
+	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+});
+
 //Addming marker in the center of map
 var singleMarker = L.marker([38.8610, 71.2761])
     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
@@ -53,7 +59,8 @@ marker.addTo(map);
 var baseMaps = {
     'OSM': osm,
     'Water Color Map': watercolorMap,
-    'Stamen Toner': st
+    'Stamen Toner': st,
+    'Topo Map': openTopoMap,
 }
 
 var overlayMaps = {
