@@ -16,12 +16,15 @@
     <div id="map"></div>
     <button onclick="fullScreenView()">View Fullscreen</button>
     <div class="coordinate"></div>
+    <button onclick="printMap()">Print Map</button>
 </body>
 
 </html>
 
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../lib/leaflet.browser.print.min.js"></script>
+
 <script>
     var indiaCoordinate = [20.5937 , 78.9629];
     var suratCoordinate = [21.1702, 72.8311];
@@ -52,5 +55,12 @@
         console.log(e)
         $('.coordinate').html('Lat: '+ e.latlng.lat +  " "+  'Lng: ' +  e.latlng.lng)
     })
+
+    //Print Map
+    function printMap() {
+        window.print();
+    }
+    //Will add print controllers
+    L.control.browserPrint().addTo(map)
 
 </script>
