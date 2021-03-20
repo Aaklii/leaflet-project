@@ -15,6 +15,7 @@
 <body>
     <div id="map"></div>
     <button onclick="fullScreenView()">View Fullscreen</button>
+    <div class="coordinate"></div>
 </body>
 
 </html>
@@ -45,5 +46,11 @@
     function fullScreenView() {
         mapId.requestFullscreen();
     }
+
+    //Show Map coordinates on the web
+    map.on('mousemove', function(e){
+        console.log(e)
+        $('.coordinate').html('Lat: '+ e.latlng.lat +  " "+  'Lng: ' +  e.latlng.lng)
+    })
 
 </script>
