@@ -22,6 +22,7 @@
     <button onclick="fullScreenView()">View Fullscreen</button>
     <div class="coordinate"></div>
     <button onclick="printMap()">Print Map</button>
+    <button onclick="zoomToLayer()">Zoom to Layer</button>
 </body>
 
 </html>
@@ -56,5 +57,21 @@
 
     //Map Search
     L.Control.geocoder().addTo(map);
-    
+
+    //Leaflet layer control
+    var baseMaps = {
+        'OSM': osm,
+        'Water Color Map': watercolorMap,
+        'Stamen Toner': st
+    }
+
+    var overlayMaps = {
+        'GeoJSON Markers': marker,
+        'Single Marker': singleMarker
+    }
+
+    L.control.layers(baseMaps, overlayMaps, { 
+        collapsed: false, 
+        position: 'topleft' 
+        }).addTo(map);
 </script>
