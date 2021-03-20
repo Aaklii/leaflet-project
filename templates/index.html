@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <link rel="stylesheet" href="../lib/leaflet-measure.css">
     <link rel="stylesheet" href="../lib/MarkerCluster.css">
     <link rel="stylesheet" href="../lib/MarkerCluster.Default.css">
@@ -29,6 +30,7 @@
 
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 
 <script src="../lib/leaflet.browser.print.min.js"></script>
 <script src="../lib/leaflet-measure.js"></script>
@@ -51,4 +53,8 @@
     taji.addTo(marker);
     marker.addTo(map);
 
+
+    //Map Search
+    L.Control.geocoder().addTo(map);
+    
 </script>
