@@ -20,7 +20,11 @@ L.control.measure({
     primaryLengthUnit: 'kilometers',
     secondaryLengthUnit: 'meter',
     primaryAreaUnit: 'sqmeters',
-    secondaryAreaUnit: undefined
+    secondaryAreaUnit: undefined,
+
+    activeColor: '#24292e',
+    completedColor: '#484f56',
+
 }).addTo(map);
 
 //zoom to layer
